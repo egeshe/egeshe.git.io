@@ -1,0 +1,137 @@
+
+<?php 
+
+	require_once 'db_connect.php';
+	
+?>
+<html lang = "en">
+
+<head>
+	<meta charset = "utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+	<title>Jmih Shop Inc.</title>
+	
+	<script src="js/modernizr.js"></script>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+	<link href="jqcart.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jqcart.min.js"></script>
+
+					<script>
+						$(function() {
+							'use strict';
+							// инициализация плагина
+							$.jqCart({
+								buttons: '.product-buttons',        // селектор кнопок, аля "Добавить в корзину"
+								handler: 'handler.php', // путь к обработчику
+								visibleLabel: false,         // показывать/скрывать ярлык при пустой корзине (по умолчанию: false)
+								openByAdding: false,         // автоматически открывать корзину при добавлении товара (по умолчанию: false)
+								currency: 'рублей',          // валюта: строковое значение, мнемоники (по умолчанию "$")
+								cartLabel: '.label-place'    /* селектор элемента, где будет размещен ярлык, 
+																он же - "кнопка" для открытия корзины */
+							});
+							
+							// дополнительные методы
+							$.jqCart('openCart'); // открыть корзину
+							$.jqCart('clearCart'); // очистить корзину
+						});
+					</script>
+
+</head>
+
+<body>
+
+	<header>
+		<div class = "wrap">
+			<div class = "header">
+				<div class = "logo">
+					<a href = "index.php"><img src = "images/logo.gif" alt = ""/></a>
+				</div>
+				<div class = "nav">
+					<nav class = "nav" tabindex='1'>
+					<ul>
+						<li class = ""><a href = "index.php">Товары</a></li>
+						<li class = ""><a href = "lifestyle.php">Лайфстайл</a></li>
+						<li class = "active"><a href = "job.html">Работа</a></li>
+						<li class = ""><a href = "map.html">Филиалы</a></li>
+						<div class="label-place"></div>
+					</ul>
+					</nav>
+				</div>
+				<div class = "clear"></div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		
+		
+		<div id = "job-left">
+			<div class = "job-wrapper">
+				<img id = "job-left-img" src = "images/pic1.jpg" alt = ""/>
+				<img id = "job-left-img" src = "images/pic2.jpg" alt = ""/>
+				<img id = "job-left-img" src = "images/pic3.jpg" alt = ""/>
+			</div>
+		</div>
+		
+		
+		<div id = "job-right">
+			<div class = "job-text">
+				<h2>Карьера в Жмых Shop</h2>
+				<p>Хотели бы присоединиться к нашей команде? Тогда вы по адресу! Пажилые рофлы, дед аферист и Сашенька ждут вас. Они точно украдут ваши донаты.</p>
+			</div>
+			<div class = "job-text-2">
+				<p id = "Job_Search">Job Search</p>
+				<br>
+				<p>
+					<select id = "job-text-2-size" name="select" name="q" placeholder="Выберите город">
+					<option selected value="s0">Выберите город</option>
+					<option value="s1">Кемерово</option>
+					<option value="s2">Москва</option>
+					<option value="s3">Новосибирск</option>
+					<option value="s4">Самара</option>
+					<option value="s5">Санкт-Петербург</option>
+					</select>
+				</p>
+				<p><input id = "job-text-2-search" type="submit" value="Поиск"></p>
+				<br>
+			</div>
+			<div class = "job-radio">
+				<script language="JavaScript" src="js/audio-player.js"></script>
+				<object type="application/x-shockwave-flash" data="js/player.swf" id="audioplayer1" height="25" width="290">
+				<param name="movie" value="js/player.swf">
+				<param name="FlashVars" value="playerID=1&amp;soundFile=audio/Radio.mp3">
+				<param name="quality" value="high">
+				<param name="menu" value="true">
+				<param name="wmode" value="transparent">
+				</object>
+			</div>
+		</div>
+		
+	</main>
+	
+	<footer>
+		<div class = "wrapper">
+			<div id='footer_text'>
+				<div>
+					<img src='images/2020.png' id='established'>
+				</div>
+				<div>DEVELOPED IN THE DESIGN AREA | <a href = "">CONTACT US</a>
+					<br><span class = "address"><a href = ""></a>1488 DONBASS STREET, <br>SAMARA, SA 2281488</a> | 
+					<a href = "tel:228-1488">228-1488</a></span>
+					<br><div class = "line"></div>
+					<span id = "designby">DESIGN BY <a href = "">Egeshe Lincoln</a></span>
+				</div>
+				<div>
+					<img src='images/mapSamara.png' id='texas_mini'>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+
+</html>

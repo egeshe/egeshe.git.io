@@ -1,0 +1,174 @@
+
+<?php 
+
+	require_once 'db_connect.php';
+	
+?>
+<html lang = "en">
+
+<head>
+	<meta charset = "utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+	<title>Jmih Shop Inc.</title>
+	
+	<script src="js/modernizr.js"></script>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+	<link href="jqcart.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jqcart.min.js"></script>
+
+					<script>
+						$(function() {
+							'use strict';
+							// инициализация плагина
+							$.jqCart({
+								buttons: '.product-buttons',        // селектор кнопок, аля "Добавить в корзину"
+								handler: 'handler.php', // путь к обработчику
+								visibleLabel: false,         // показывать/скрывать ярлык при пустой корзине (по умолчанию: false)
+								openByAdding: false,         // автоматически открывать корзину при добавлении товара (по умолчанию: false)
+								currency: 'рублей',          // валюта: строковое значение, мнемоники (по умолчанию "$")
+								cartLabel: '.label-place'    /* селектор элемента, где будет размещен ярлык, 
+																он же - "кнопка" для открытия корзины */
+							});
+							
+							// дополнительные методы
+							$.jqCart('openCart'); // открыть корзину
+							$.jqCart('clearCart'); // очистить корзину
+						});
+					</script>
+
+	
+	<!-- map 2GIS -->
+	<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+	<script type="text/javascript">
+		var map;
+
+		DG.then(function () {
+			map = DG.map('map', {
+				center: [55.3548, 86.0841],
+				zoom: 5
+			});
+			
+			DG.control.location({position: 'bottomright'}).addTo(map);
+			DG.control.scale().addTo(map);
+			DG.control.ruler({position: 'bottomleft'}).addTo(map);
+			DG.control.traffic().addTo(map);
+			
+			map.on('projectchange', function (e) {
+				console.log(e);
+			});
+			map.on('projectleave', function (e) {
+			   console.log(e);
+			});
+			
+			
+			DG.marker([55.354741, 86.086355])
+				.addTo(map)
+				.bindPopup('<center>Jmih Shop</center><br>Кемерово, проспект Советский, 61<hr><br><center>Opening Times</center><br>monday <p style = "float:right">10:00 - 22:00</p><br>tuesday <p style = "float:right">10:00 - 22:00<p><p style = "float:left">wednesday<p><p style = "float:right">10:00 - 22:00</p><br>thursday <p style = "float:right">10:00 - 22:00</p><br>friday <p style = "float:right">10:00 - 22:00</p><br>saturday <p style = "float:right">10:00 - 22:00</p><br>sunday <p style = "float:right">10:00 - 22:00</p>')
+				.bindLabel('Jmih Shop | Кемерово, проспект Советский, 61', {
+                        static: true
+                    })
+			
+			DG.marker([55.749231, 37.537587])
+				.addTo(map)
+				.bindPopup('<center>Jmih Shop</center><br>Москва, Пресненская Набережная, 12<hr><br><center>Opening Times</center><br>monday <p style = "float:right">Круглосуточно</p><br>tuesday <p style = "float:right">Круглосуточно<p><p style = "float:left">wednesday<p><p style = "float:right">Круглосуточно</p><br>thursday <p style = "float:right">Круглосуточно</p><br>friday <p style = "float:right">Круглосуточно</p><br>saturday <p style = "float:right">Круглосуточно</p><br>sunday <p style = "float:right">Круглосуточно</p>')
+				.bindLabel('Jmih Shop | Москва, Пресненская Набережная, 12', {
+                        static: true
+                    })
+			
+			DG.marker([59.988494, 30.177308])
+				.addTo(map)
+				.bindPopup('<center>Jmih Shop</center><br>Санкт-Петербург, Приморское шоссе, 2<hr><br><center>Opening Times</center><br>monday <p style = "float:right">Круглосуточно</p><br>tuesday <p style = "float:right">Круглосуточно<p><p style = "float:left">wednesday<p><p style = "float:right">Круглосуточно</p><br>thursday <p style = "float:right">Круглосуточно</p><br>friday <p style = "float:right">Круглосуточно</p><br>saturday <p style = "float:right">Круглосуточно</p><br>sunday <p style = "float:right">Круглосуточно</p>')
+				.bindLabel('Jmih Shop | Санкт-Петербург, Приморское шоссе, 2', {
+                        static: true
+                    })
+			
+			DG.marker([53.191633, 50.188983])
+				.addTo(map)
+				.bindPopup('<center>Jmih Shop</center><br>Самара, улица Аэродромная, 47а<hr><br><center>Opening Times</center><br>monday <p style = "float:right">10:00 - 22:00</p><br>tuesday <p style = "float:right">10:00 - 22:00<p><p style = "float:left">wednesday<p><p style = "float:right">10:00 - 22:00</p><br>thursday <p style = "float:right">10:00 - 22:00</p><br>friday <p style = "float:right">10:00 - 22:00</p><br>saturday <p style = "float:right">10:00 - 22:00</p><br>sunday <p style = "float:right">10:00 - 22:00</p>')
+				.bindLabel('Jmih Shop | Самара, улица Аэродромная, 47а', {
+                        static: true
+                    })
+			
+			DG.marker([55.028556, 82.938061])
+				.addTo(map)
+				.bindPopup('<center>Jmih Shop</center><br>Новосибирск, улица Военная, 5<hr><br><center>Opening Times</center><br>monday <p style = "float:right">10:00 - 22:00</p><br>tuesday <p style = "float:right">10:00 - 22:00<p><p style = "float:left">wednesday<p><p style = "float:right">10:00 - 22:00</p><br>thursday <p style = "float:right">10:00 - 22:00</p><br>friday <p style = "float:right">10:00 - 22:00</p><br>saturday <p style = "float:right">10:00 - 22:00</p><br>sunday <p style = "float:right">10:00 - 22:00</p>')
+				.bindLabel('Jmih Shop | Новосибирск, улица Военная, 5', {
+                        static: true
+                    })
+			
+		});
+		
+	</script>	
+	
+	
+</head>
+
+<body>
+
+	<header>
+		<div class = "wrap">
+			<div class = "header">
+				<div class = "logo">
+					<a href = "index.php"><img src = "images/logo.gif" alt = ""/></a>
+				</div>
+				<div class = "nav">
+					<nav class = "nav" tabindex='1'>
+					<ul>
+						<li class = ""><a href = "index.php">Товары</a></li>
+						<li class = ""><a href = "lifestyle.php">Лайфстайл</a></li>
+						<li class = ""><a href = "job.html">Работа</a></li>
+						<li class = "active"><a href = "map.html">Филиалы</a></li>
+						<div class="label-place"></div>
+					</ul>
+					</nav>
+				</div>
+				<div class = "clear"></div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		
+		<div id="map"></div>
+        <script>
+            DG.then(function() {
+                var map;
+
+                map = DG.map('map', {
+                    center: [55.3445, 86.0974],
+                    zoom: 5
+                });
+				
+            });
+			
+				
+        </script>
+
+	</main>
+	
+	<footer>
+		<div class = "wrapper">
+			<div id='footer_text'>
+				<div>
+					<img src='images/2020.png' id='established'>
+				</div>
+				<div>DEVELOPED IN THE DESIGN AREA | <a href = "">CONTACT US</a>
+					<br><span class = "address"><a href = ""></a>1488 DONBASS STREET, <br>SAMARA, SA 2281488</a> | 
+					<a href = "tel:228-1488">228-1488</a></span>
+					<br><div class = "line"></div>
+					<span id = "designby">DESIGN BY <a href = "">Egeshe Lincoln</a></span>
+				</div>
+				<div>
+					<img src='images/mapSamara.png' id='texas_mini'>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+
+</html>
